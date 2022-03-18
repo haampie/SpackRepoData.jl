@@ -2,6 +2,8 @@
 
 Generate plots for activity in [spack/spack](https://github.com/spack/spack).
 
+https://haampie.github.io/SpackRepoData.jl/
+
 ## Install
 
 Open the package manager in the REPL via `]` and run
