@@ -12,6 +12,8 @@ Open the package manager in the REPL via `]` and run
 ## Generate
 
 ```julia
+$  GITHUB_AUTH=your_github_token julia
+
 julia> using SpackRepoData: download_issues, is_merged_package_pr, plot_fraction_merged_within
 
 julia> issues = download_issues() # takes a while, github's api is not very fast.
