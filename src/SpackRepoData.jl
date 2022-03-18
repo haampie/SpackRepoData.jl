@@ -1,4 +1,4 @@
-module SpackData
+module SpackRepoData
 
 import GitHub
 using JLD2
