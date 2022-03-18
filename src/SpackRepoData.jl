@@ -32,8 +32,7 @@ end
 
 ## package pr stuff
 
-is_new_package(issue) = any(label -> label["name"] ∈ ("new-package",), issue.labels)
-is_package(issue) = any(label -> label["name"] ∈ ("new-version", "update-package", "new-variant"), issue.labels)
+is_package(issue) = any(label -> label["name"] ∈ ("new-package", "new-version", "update-package", "new-variant"), issue.labels)
 is_core(issue) = any(label -> label["name"] ∈ ("core","architecture","binary-packages","build-environment","build-systems","new-command","commands","compilers","directives","environments","fetching","locking","modules","stage","tests","utilities","versions"), issue.labels)
 is_merged_pr(issue) = issue.pull_request !== nothing && issue.pull_request.merged_at !== nothing && issue.state == "closed"
 is_merged_package_pr(issue) = is_merged_pr(issue) && is_package(issue)
@@ -201,7 +200,7 @@ function plot_fraction_merged_within(issues; max_days = [1, 2, 7, 30], window = 
         ymax=100,
         ylabel = "\\% merged",
         ytick = "{0,10,20,30,40,50,60,70,80,90,100}",
-        title = "Percentage of package PRs merged within $window days [$(repo_path)]",
+        title = "Percentage of merged PRs [sliding window: $window days] [$(repo_path)]",
         xmajorgrids,
         ymajorgrids,
       },
