@@ -12,7 +12,7 @@ Open the package manager in the REPL via `]` and run
 ## Generate
 
 ```julia
-julia> using SpackData: download_issues, is_merged_package_pr, plot_fraction_merged_within
+julia> using SpackRepoData: download_issues, is_merged_package_pr, plot_fraction_merged_within
 
 julia> issues = download_issues() # takes a while, github's api is not very fast.
 
